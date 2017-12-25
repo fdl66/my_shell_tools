@@ -2,7 +2,7 @@
 for i in `seq 1 255`
     do 
         {
-            ping -c 1 10.0.0.${i}1 > /dev/null 2>&1
+            ping -c 1 202.113.76.${i} > /dev/null 2>&1
             if [ $? -eq 0 ]; then 
                 echo 10.0.0.${i} is OK
             else

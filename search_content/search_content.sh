@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# != 2 ];then
+if [ $# != 2 || $# !=3 ];then
     echo 'sw $1 $2,parameter error!'
     exit 1
 fi
@@ -10,6 +10,10 @@ for file in `find ${DIR}`;do
         continue
     elif [ `cat ${file}|grep ${CONT}|wc -l` -gt 0 ];then
         echo ${file}
+        if [ $# -eq 3 ];then
+            cat ${file} | grep ${CONT}
+            echo ""
+        fi
     fi
 done
 
